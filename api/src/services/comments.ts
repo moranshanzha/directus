@@ -83,7 +83,7 @@ export class CommentsService extends ItemsService {
 				admin: false,
 				app: false,
 				roles: await fetchRolesTree(user['role']?.id ?? null, this.knex),
-				ip: null,
+				ip: this.accountability?.ip,
 			};
 
 			const userGlobalAccess = await fetchGlobalAccess(accountability, this.knex);
